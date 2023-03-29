@@ -1,0 +1,13 @@
+program Latihan_1_2;
+
+uses
+  Forms,
+  Latihan_1_1 in 'Latihan_1_1.pas' {Form1};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.
