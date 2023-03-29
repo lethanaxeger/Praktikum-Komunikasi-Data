@@ -21,10 +21,6 @@ type
     Edsumbux: TEdit;
     Label3: TLabel;
     Edsumbuy: TEdit;
-    Amp: TRadioGroup;
-    Frek: TRadioGroup;
-    Tinggi: TRadioGroup;
-    Lebar: TRadioGroup;
     rba1: TRadioButton;
     rba2: TRadioButton;
     rba4: TRadioButton;
@@ -37,6 +33,10 @@ type
     rbl10: TRadioButton;
     rbl30: TRadioButton;
     rbl50: TRadioButton;
+    Amp: TGroupBox;
+    Frek: TGroupBox;
+    Tinggi: TGroupBox;
+    Lebar: TGroupBox;
     procedure BtkotakClick(Sender: TObject);
     procedure BtsinusClick(Sender: TObject);
   private
@@ -107,11 +107,26 @@ begin
   Frmsinyal.Imgkotak.Canvas.LineTo(ax+(i-1)*b,ay);
 end;
 
+procedure reset;
+var
+  x,y:integer;
+begin
+  Frmsinyal.Imgsinus.Picture:=nil;
+  Frmsinyal.Imgsinus.Refresh ;
+  Frmsinyal.Imgkotak.Picture:=nil;
+  Frmsinyal.Imgkotak.Refresh ;
+  x:=strtoint(Frmsinyal.Edsumbux.Text);
+  y:=strtoint(Frmsinyal.Edsumbuy.Text);
+  sumbu1(20,120,x,y);
+  sumbu2(20,120,x,y);
+end;
+
 procedure TFrmsinyal.BtsinusClick(Sender: TObject);
 var
   Amp,sx,x,y:integer;
   sy,Frek:real;
 begin
+  reset;
   if rba1.Checked then Amp:=25; //amplitudo=1 v
   if rba2.Checked then Amp:=50; //amplitudo=2 v
   if rba4.Checked then Amp:=100; //amplitudo=1 v
@@ -135,27 +150,31 @@ var
   biner:string;
   tnd : integer;
 begin
-   if rbl10.checked then Lebar:=10;
-   if rbl30.checked then Lebar:=30;
-   if rbl50.checked then Lebar:=150;
-   if rbt30.checked then Tinggi:=30;
-   if rbt60.checked then Tinggi:=60;
-   if rbt100.checked then Tinggi:=100;
-   biner:=Edbiner.Text;
+  reset;
+  if rbl10.checked then Lebar:=10;
+  if rbl30.checked then Lebar:=30;
+  if rbl50.checked then Lebar:=50;
+  if rbt30.checked then Tinggi:=30;
+  if rbt60.checked then Tinggi:=60;
+  if rbt100.checked then Tinggi:=100;
+  biner:=Edbiner.Text;
   x:=strtoint(Frmsinyal.Edsumbux.Text);
   y:=strtoint(Frmsinyal.Edsumbuy.Text);
   sumbu2(20,120,x,y);
   tnd:=0;
   for i:=1 to 16 do
     if biner[i]='1' then
-    if tnd=0 then begin tegak(20,120,Lebar,Tinggi,i);
-       satu (20,120,Lebar,Tinggi,i);
-       tnd:=1; end
-    else satu(20,120,Lebar,Tinggi,i)
-    else if tnd=1 then begin tegak(20,120,Lebar,Tinggi,i);
-       nol (20,120,Lebar,Tinggi,i);
-       tnd:=0; end
-    else nol(20,120,Lebar,Tinggi,i);
-end;
-
+      if tnd=0 then
+        begin
+        tegak(20,120,Tinggi,Lebar,i);
+        satu(20,120,Tinggi,Lebar,i);
+        tnd:=1; end
+      else satu(20,120,Tinggi,Lebar,i)
+      else if tnd=1 then
+        begin
+        tegak(20,120,Tinggi,Lebar,i);
+        nol(20,120,Tinggi,Lebar,i);
+        tnd:=0; end
+      else nol(20,120,Tinggi,Lebar,i);
+    end;
 end.

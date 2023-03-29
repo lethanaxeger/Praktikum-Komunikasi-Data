@@ -1,9 +1,10 @@
 object Frmsinyal: TFrmsinyal
-  Left = 255
-  Top = 129
+  Left = 234
+  Top = 116
   Width = 1045
-  Height = 666
-  Caption = 'Menampilkan Sinyal Sinusoida'
+  Height = 608
+  VertScrollBar.Position = 56
+  Caption = 'Menampilkan Sinyal Sinusoida dan Kotak'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,91 +16,91 @@ object Frmsinyal: TFrmsinyal
   TextHeight = 13
   object Imgsinus: TImage
     Left = 0
-    Top = 24
+    Top = -32
     Width = 817
     Height = 297
   end
   object Imgkotak: TImage
     Left = 0
-    Top = 328
+    Top = 272
     Width = 817
     Height = 233
   end
   object GroupBox1: TGroupBox
     Left = 824
-    Top = 24
+    Top = -32
     Width = 193
     Height = 297
     Caption = 'Menu Gelombang Sinus'
     TabOrder = 0
-    object Amp: TRadioGroup
+    object Amp: TGroupBox
       Left = 8
       Top = 24
       Width = 177
-      Height = 105
+      Height = 121
       Caption = 'Amplitudo'
       TabOrder = 0
+      object rba1: TRadioButton
+        Left = 8
+        Top = 24
+        Width = 113
+        Height = 17
+        Caption = '1 V'
+        TabOrder = 0
+      end
+      object rba2: TRadioButton
+        Left = 8
+        Top = 56
+        Width = 113
+        Height = 17
+        Caption = '2 V'
+        TabOrder = 1
+      end
+      object rba4: TRadioButton
+        Left = 8
+        Top = 88
+        Width = 113
+        Height = 17
+        Caption = '4 V'
+        TabOrder = 2
+      end
     end
-    object Frek: TRadioGroup
+    object Frek: TGroupBox
       Left = 8
-      Top = 144
+      Top = 152
       Width = 177
-      Height = 105
+      Height = 129
       Caption = 'Frekuensi'
       TabOrder = 1
-    end
-    object rba1: TRadioButton
-      Left = 24
-      Top = 48
-      Width = 113
-      Height = 17
-      Caption = '1 V'
-      TabOrder = 2
-    end
-    object rba2: TRadioButton
-      Left = 24
-      Top = 72
-      Width = 113
-      Height = 17
-      Caption = '2 V'
-      TabOrder = 3
-    end
-    object rba4: TRadioButton
-      Left = 24
-      Top = 96
-      Width = 113
-      Height = 17
-      Caption = '4 V'
-      TabOrder = 4
-    end
-    object rbf2: TRadioButton
-      Left = 24
-      Top = 168
-      Width = 113
-      Height = 17
-      Caption = '2 Hz'
-      TabOrder = 5
-    end
-    object rbf5: TRadioButton
-      Left = 24
-      Top = 192
-      Width = 113
-      Height = 17
-      Caption = '5 Hz'
-      TabOrder = 6
-    end
-    object rbf10: TRadioButton
-      Left = 24
-      Top = 216
-      Width = 113
-      Height = 17
-      Caption = '10 Hz'
-      TabOrder = 7
+      object rbf10: TRadioButton
+        Left = 8
+        Top = 88
+        Width = 113
+        Height = 17
+        Caption = '10 Hz'
+        TabOrder = 0
+      end
+      object rbf2: TRadioButton
+        Left = 8
+        Top = 24
+        Width = 113
+        Height = 17
+        Caption = '2 Hz'
+        TabOrder = 1
+      end
+      object rbf5: TRadioButton
+        Left = 8
+        Top = 56
+        Width = 113
+        Height = 17
+        Caption = '5 Hz'
+        TabOrder = 2
+      end
     end
   end
   object GroupBox4: TGroupBox
     Left = 824
-    Top = 328
+    Top = 272
     Width = 193
     Height = 305
     Caption = 'Menu Gelombang Kotak'
@@ -118,90 +119,90 @@ object Frmsinyal: TFrmsinyal
       Height = 21
       TabOrder = 0
     end
-    object Tinggi: TRadioGroup
+    object Tinggi: TGroupBox
       Left = 8
-      Top = 64
+      Top = 72
       Width = 177
-      Height = 105
+      Height = 113
       Caption = 'Tinggi Pulsa'
       TabOrder = 1
+      object rbt100: TRadioButton
+        Left = 8
+        Top = 72
+        Width = 113
+        Height = 17
+        Caption = '100 V'
+        TabOrder = 0
+      end
+      object rbt30: TRadioButton
+        Left = 8
+        Top = 24
+        Width = 113
+        Height = 17
+        Caption = '30 V'
+        TabOrder = 1
+      end
+      object rbt60: TRadioButton
+        Left = 8
+        Top = 48
+        Width = 113
+        Height = 17
+        Caption = '60 V'
+        TabOrder = 2
+      end
     end
-    object Lebar: TRadioGroup
+    object Lebar: TGroupBox
       Left = 8
-      Top = 176
+      Top = 192
       Width = 177
       Height = 105
       Caption = 'Lebar Pulsa'
       TabOrder = 2
-    end
-    object rbt30: TRadioButton
-      Left = 16
-      Top = 88
-      Width = 113
-      Height = 17
-      Caption = '30 V'
-      TabOrder = 3
-    end
-    object rbt60: TRadioButton
-      Left = 16
-      Top = 112
-      Width = 113
-      Height = 17
-      Caption = '60 V'
-      TabOrder = 4
-    end
-    object rbt100: TRadioButton
-      Left = 16
-      Top = 136
-      Width = 113
-      Height = 17
-      Caption = '100 V'
-      TabOrder = 5
-    end
-    object rbl10: TRadioButton
-      Left = 16
-      Top = 200
-      Width = 113
-      Height = 17
-      Caption = '10'
-      TabOrder = 6
-    end
-    object rbl30: TRadioButton
-      Left = 16
-      Top = 224
-      Width = 113
-      Height = 17
-      Caption = '30'
-      TabOrder = 7
-    end
-    object rbl50: TRadioButton
-      Left = 16
-      Top = 248
-      Width = 113
-      Height = 17
-      Caption = '50'
-      TabOrder = 8
+      object rbl50: TRadioButton
+        Left = 8
+        Top = 72
+        Width = 113
+        Height = 17
+        Caption = '50'
+        TabOrder = 0
+      end
+      object rbl30: TRadioButton
+        Left = 8
+        Top = 48
+        Width = 113
+        Height = 17
+        Caption = '30'
+        TabOrder = 1
+      end
+      object rbl10: TRadioButton
+        Left = 8
+        Top = 24
+        Width = 113
+        Height = 17
+        Caption = '10'
+        TabOrder = 2
+      end
     end
   end
   object Panel1: TPanel
     Left = 0
-    Top = 568
+    Top = 512
     Width = 817
     Height = 65
     TabOrder = 2
     object Label2: TLabel
       Left = 480
       Top = 16
-      Width = 32
+      Width = 7
       Height = 13
-      Caption = 'Label2'
+      Caption = 'X'
     end
     object Label3: TLabel
       Left = 480
       Top = 40
-      Width = 32
+      Width = 7
       Height = 13
-      Caption = 'Label3'
+      Caption = 'Y'
     end
     object Btsinus: TButton
       Left = 56
