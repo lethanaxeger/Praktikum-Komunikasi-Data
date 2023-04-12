@@ -92,7 +92,6 @@ begin
   Frmsinyal.Imgkotak.Canvas.MoveTo(ax+(i-1)*b,ay-a);
   Frmsinyal.Imgkotak.Canvas.LineTo(ax+b+(i-1)*b,ay-a);
 end;
-
 procedure nol(ax,ay,a,b,i:integer);
 begin
   Frmsinyal.Imgkotak.Canvas.Pen.Color:=clred;
@@ -104,17 +103,27 @@ procedure tegak(ax,ay,a,b,i:integer);
 begin
   Frmsinyal.Imgkotak.Canvas.Pen.Color:=clred;
   Frmsinyal.Imgkotak.Canvas.MoveTo(ax+(i-1)*b,ay);
-  Frmsinyal.Imgkotak.Canvas.LineTo(ax+(i-1)*b,ay);
+  Frmsinyal.Imgkotak.Canvas.LineTo(ax+(i-1)*b,ay-a);
 end;
 
-procedure reset;
+procedure resetSinus;
 var
   x,y:integer;
 begin
   Frmsinyal.Imgsinus.Picture:=nil;
-  Frmsinyal.Imgsinus.Refresh ;
+  Frmsinyal.Imgsinus.Refresh;
+  x:=strtoint(Frmsinyal.Edsumbux.Text);
+  y:=strtoint(Frmsinyal.Edsumbuy.Text);
+  sumbu1(20,120,x,y);
+  sumbu2(20,120,x,y);
+end;
+
+procedure resetKotak;
+var
+  x,y:integer;
+begin
   Frmsinyal.Imgkotak.Picture:=nil;
-  Frmsinyal.Imgkotak.Refresh ;
+  Frmsinyal.Imgkotak.Refresh;
   x:=strtoint(Frmsinyal.Edsumbux.Text);
   y:=strtoint(Frmsinyal.Edsumbuy.Text);
   sumbu1(20,120,x,y);
@@ -126,7 +135,7 @@ var
   Amp,sx,x,y:integer;
   sy,Frek:real;
 begin
-  reset;
+  resetSinus;
   if rba1.Checked then Amp:=25; //amplitudo=1 v
   if rba2.Checked then Amp:=50; //amplitudo=2 v
   if rba4.Checked then Amp:=100; //amplitudo=1 v
@@ -150,7 +159,7 @@ var
   biner:string;
   tnd : integer;
 begin
-  reset;
+  resetKotak;
   if rbl10.checked then Lebar:=10;
   if rbl30.checked then Lebar:=30;
   if rbl50.checked then Lebar:=50;

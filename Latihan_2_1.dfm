@@ -1,6 +1,6 @@
 object Frmsinyal: TFrmsinyal
-  Left = 220
-  Top = 52
+  Left = 230
+  Top = 18
   Width = 1045
   Height = 664
   Caption = 'Menampilkan Sinyal Sinusoida dan Kotak'
