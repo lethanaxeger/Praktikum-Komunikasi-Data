@@ -35,8 +35,8 @@ type
     rbl50: TRadioButton;
     Amp: TGroupBox;
     Frek: TGroupBox;
-    Lebar: TGroupBox;
     Tinggi: TGroupBox;
+    Lebar: TGroupBox;
     procedure BtkotakClick(Sender: TObject);
     procedure BtsinusClick(Sender: TObject);
   private
@@ -153,7 +153,7 @@ begin
   reset;
   if rbl10.checked then Lebar:=10;
   if rbl30.checked then Lebar:=30;
-  if rbl50.checked then Lebar:=150;
+  if rbl50.checked then Lebar:=50;
   if rbt30.checked then Tinggi:=30;
   if rbt60.checked then Tinggi:=60;
   if rbt100.checked then Tinggi:=100;
@@ -166,15 +166,15 @@ begin
     if biner[i]='1' then
       if tnd=0 then
         begin
-        tegak(20,120,Lebar,Tinggi,i);
-        satu (20,120,Lebar,Tinggi,i);
+        tegak(20,120,Tinggi,Lebar,i);
+        satu(20,120,Tinggi,Lebar,i);
         tnd:=1; end
-      else satu(20,120,Lebar,Tinggi,i)
+      else satu(20,120,Tinggi,Lebar,i)
       else if tnd=1 then
         begin
-        tegak(20,120,Lebar,Tinggi,i);
-        nol (20,120,Lebar,Tinggi,i);
+        tegak(20,120,Tinggi,Lebar,i);
+        nol(20,120,Tinggi,Lebar,i);
         tnd:=0; end
-      else nol(20,120,Lebar,Tinggi,i);
+      else nol(20,120,Tinggi,Lebar,i);
     end;
 end.

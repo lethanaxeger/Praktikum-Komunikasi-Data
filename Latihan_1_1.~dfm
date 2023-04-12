@@ -1,6 +1,6 @@
 object Frmsinyal: TFrmsinyal
-  Left = 339
-  Top = 131
+  Left = 219
+  Top = 116
   Width = 1044
   Height = 540
   Caption = 'Gelombang Sinus'
@@ -16,7 +16,7 @@ object Frmsinyal: TFrmsinyal
   object Imgtampil: TImage
     Left = 0
     Top = 0
-    Width = 825
+    Width = 737
     Height = 345
   end
   object Tpanel: TPanel
@@ -24,7 +24,6 @@ object Frmsinyal: TFrmsinyal
     Top = 352
     Width = 1033
     Height = 153
-    Caption = 'Tpanel'
     TabOrder = 0
     object Label1: TLabel
       Left = 640
@@ -67,9 +66,9 @@ object Frmsinyal: TFrmsinyal
     end
   end
   object Mmhasil: TMemo
-    Left = 832
+    Left = 744
     Top = 0
-    Width = 201
+    Width = 289
     Height = 345
     TabOrder = 1
   end

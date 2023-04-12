@@ -1,6 +1,6 @@
 object Frmsinyal: TFrmsinyal
-  Left = 339
-  Top = 131
+  Left = 219
+  Top = 116
   Width = 1044
   Height = 540
   Caption = 'Gelombang Sinus'
@@ -14,8 +14,8 @@ object Frmsinyal: TFrmsinyal
   PixelsPerInch = 96
   TextHeight = 13
   object Imgtampil: TImage
-    Left = 0
-    Top = 0
+    Left = 8
+    Top = -8
     Width = 737
     Height = 345
   end

@@ -1,8 +1,9 @@
 object Frmsinyal: TFrmsinyal
-  Left = 215
-  Top = 21
+  Left = 234
+  Top = 116
   Width = 1045
-  Height = 685
+  Height = 608
+  VertScrollBar.Position = 56
   Caption = 'Menampilkan Sinyal Sinusoida dan Kotak'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -15,19 +16,19 @@ object Frmsinyal: TFrmsinyal
   TextHeight = 13
   object Imgsinus: TImage
     Left = 0
-    Top = 24
+    Top = -32
     Width = 817
     Height = 297
   end
   object Imgkotak: TImage
     Left = 0
-    Top = 328
+    Top = 272
     Width = 817
     Height = 233
   end
   object GroupBox1: TGroupBox
     Left = 824
-    Top = 24
+    Top = -32
     Width = 193
     Height = 297
     Caption = 'Menu Gelombang Sinus'
@@ -99,7 +100,7 @@ object Frmsinyal: TFrmsinyal
   end
   object GroupBox4: TGroupBox
     Left = 824
-    Top = 328
+    Top = 272
     Width = 193
     Height = 305
     Caption = 'Menu Gelombang Kotak'
@@ -118,12 +119,12 @@ object Frmsinyal: TFrmsinyal
       Height = 21
       TabOrder = 0
     end
-    object Lebar: TGroupBox
+    object Tinggi: TGroupBox
       Left = 8
       Top = 72
       Width = 177
       Height = 113
-      Caption = 'Lebar Pulsa'
+      Caption = 'Tinggi Pulsa'
       TabOrder = 1
       object rbt100: TRadioButton
         Left = 8
@@ -150,12 +151,12 @@ object Frmsinyal: TFrmsinyal
         TabOrder = 2
       end
     end
-    object Tinggi: TGroupBox
+    object Lebar: TGroupBox
       Left = 8
       Top = 192
       Width = 177
       Height = 105
-      Caption = 'Tinggi Pulsa'
+      Caption = 'Lebar Pulsa'
       TabOrder = 2
       object rbl50: TRadioButton
         Left = 8
@@ -185,7 +186,7 @@ object Frmsinyal: TFrmsinyal
   end
   object Panel1: TPanel
     Left = 0
-    Top = 568
+    Top = 512
     Width = 817
     Height = 65
     TabOrder = 2

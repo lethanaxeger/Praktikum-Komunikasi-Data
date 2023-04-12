@@ -47,10 +47,11 @@ begin
   x:= strtoint(Frmsinyal.Edsumbux.Text);
   y:= strtoint(Frmsinyal.Edsumbuy.Text);
   sumbu(40,150,x,y);
-  for sx:= 1 to 59 do
+  for sx:= 1 to 250 do
     begin
-      sy:=sin(sx/pi/3)*50;
+      sy:=sin(sx/pi/3)*60;
           Frmsinyal.Imgtampil.Canvas.Pixels[sx+40,150-round(sy)]:=clred;
+          Frmsinyal.Mmhasil.Lines.Add('x='+inttostr(sx)+''+formatfloat ('#.###',(sy)));
       end;
 end;
 
