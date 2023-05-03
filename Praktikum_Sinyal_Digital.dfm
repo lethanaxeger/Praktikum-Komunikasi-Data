@@ -1,6 +1,6 @@
 object frmrz: Tfrmrz
-  Left = 432
-  Top = 114
+  Left = 263
+  Top = 140
   Width = 1089
   Height = 540
   Caption = 'Pengkodean'
