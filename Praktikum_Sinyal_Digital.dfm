@@ -1,6 +1,6 @@
 object frmrz: Tfrmrz
-  Left = 286
-  Top = 131
+  Left = 432
+  Top = 114
   Width = 1089
   Height = 540
   Caption = 'Pengkodean'
@@ -35,12 +35,57 @@ object frmrz: Tfrmrz
       OnClick = BtrzClick
     end
     object btexit: TButton
-      Left = 120
+      Left = 944
       Top = 8
       Width = 75
       Height = 25
       Caption = 'Exit'
       TabOrder = 1
+    end
+    object btnrzl: TButton
+      Left = 120
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = 'NRZ-L'
+      TabOrder = 2
+      OnClick = btnrzlClick
+    end
+    object btnrzi: TButton
+      Left = 224
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = 'NRZ-I'
+      TabOrder = 3
+      OnClick = btnrziClick
+    end
+    object btmanchester: TButton
+      Left = 328
+      Top = 8
+      Width = 97
+      Height = 25
+      Caption = 'MANCHESTER'
+      TabOrder = 4
+      OnClick = btmanchesterClick
+    end
+    object btdmanchester: TButton
+      Left = 456
+      Top = 8
+      Width = 105
+      Height = 25
+      Caption = 'D-MANCHESTER'
+      TabOrder = 5
+      OnClick = btdmanchesterClick
+    end
+    object btami: TButton
+      Left = 600
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = 'AMI'
+      TabOrder = 6
+      OnClick = btamiClick
     end
   end
 end

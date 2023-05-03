@@ -12,7 +12,17 @@ type
     imgtampil: TImage;
     Panel1: TPanel;
     btexit: TButton;
+    btnrzl: TButton;
+    btnrzi: TButton;
+    btmanchester: TButton;
+    btdmanchester: TButton;
+    btami: TButton;
     procedure btrzClick(Sender: TObject);
+    procedure btnrzlClick(Sender: TObject);
+    procedure btnrziClick(Sender: TObject);
+    procedure btmanchesterClick(Sender: TObject);
+    procedure btdmanchesterClick(Sender: TObject);
+    procedure btamiClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -68,10 +78,180 @@ frmrz.imgtampil.Canvas.LineTo(100+y,150);
 frmrz.imgtampil.Canvas.Pen.Color:=clBlack;
 end;
 
+procedure nrzl_1(x,y,i:integer);
+begin
+x:=60*(i-1);
+y:=60*(i-1);
+frmrz.imgtampil.Canvas.Pen.Color:=clRed;
+frmrz.imgtampil.Canvas.MoveTo(40+x,150);
+frmrz.imgtampil.Canvas.LineTo(40+x,100);
+frmrz.imgtampil.Canvas.MoveTo(40+x,100);
+frmrz.imgtampil.Canvas.LineTo(70+y,100);
+frmrz.imgtampil.Canvas.MoveTo(70+y,100);
+frmrz.imgtampil.Canvas.lineto(70+y,150);
+frmrz.imgtampil.Canvas.MoveTo(70+y,150);
+frmrz.imgtampil.Canvas.LineTo(100+y,150);
+frmrz.imgtampil.Canvas.Pen.Color:=clBlack;
+end;
+
+procedure nrzl_0(x,y,i:integer);
+begin
+x:=60*(i-1);
+y:=60*(i-1);
+frmrz.imgtampil.Canvas.Pen.Color:=clRed;
+frmrz.imgtampil.Canvas.MoveTo(40+x,150);
+frmrz.imgtampil.Canvas.LineTo(40+x,200);
+frmrz.imgtampil.Canvas.MoveTo(40+x,200);
+frmrz.imgtampil.Canvas.LineTo(70+y,200);
+frmrz.imgtampil.Canvas.MoveTo(70+y,200);
+frmrz.imgtampil.Canvas.lineto(70+y,150);
+frmrz.imgtampil.Canvas.MoveTo(70+y,150);
+frmrz.imgtampil.Canvas.LineTo(100+y,150);
+frmrz.imgtampil.Canvas.Pen.Color:=clBlack;
+end;
+
+procedure nrzi_1(x,y,i:integer);
+begin
+x:=60*(i-1);
+y:=60*(i-1);
+frmrz.imgtampil.Canvas.Pen.Color:=clRed;
+frmrz.imgtampil.Canvas.MoveTo(40+x,150);
+frmrz.imgtampil.Canvas.LineTo(40+x,100);
+frmrz.imgtampil.Canvas.MoveTo(40+x,100);
+frmrz.imgtampil.Canvas.LineTo(70+y,100);
+frmrz.imgtampil.Canvas.MoveTo(70+y,100);
+frmrz.imgtampil.Canvas.lineto(70+y,150);
+frmrz.imgtampil.Canvas.MoveTo(70+y,150);
+frmrz.imgtampil.Canvas.LineTo(100+y,150);
+frmrz.imgtampil.Canvas.Pen.Color:=clBlack;
+end;
+
+procedure nrzi_0(x,y,i:integer);
+begin
+x:=60*(i-1);
+y:=60*(i-1);
+frmrz.imgtampil.Canvas.Pen.Color:=clRed;
+frmrz.imgtampil.Canvas.MoveTo(40+x,150);
+frmrz.imgtampil.Canvas.LineTo(40+x,200);
+frmrz.imgtampil.Canvas.MoveTo(40+x,200);
+frmrz.imgtampil.Canvas.LineTo(70+y,200);
+frmrz.imgtampil.Canvas.MoveTo(70+y,200);
+frmrz.imgtampil.Canvas.lineto(70+y,150);
+frmrz.imgtampil.Canvas.MoveTo(70+y,150);
+frmrz.imgtampil.Canvas.LineTo(100+y,150);
+frmrz.imgtampil.Canvas.Pen.Color:=clBlack;
+end;
+
+procedure manchester_1(x,y,i:integer);
+begin
+x:=60*(i-1);
+y:=60*(i-1);
+frmrz.imgtampil.Canvas.Pen.Color:=clRed;
+frmrz.imgtampil.Canvas.MoveTo(40+x,150);
+frmrz.imgtampil.Canvas.LineTo(40+x,100);
+frmrz.imgtampil.Canvas.MoveTo(40+x,100);
+frmrz.imgtampil.Canvas.LineTo(70+y,100);
+frmrz.imgtampil.Canvas.MoveTo(70+y,100);
+frmrz.imgtampil.Canvas.lineto(70+y,150);
+frmrz.imgtampil.Canvas.MoveTo(70+y,150);
+frmrz.imgtampil.Canvas.LineTo(100+y,150);
+frmrz.imgtampil.Canvas.Pen.Color:=clBlack;
+end;
+
+procedure manchester_0(x,y,i:integer);
+begin
+x:=60*(i-1);
+y:=60*(i-1);
+frmrz.imgtampil.Canvas.Pen.Color:=clRed;
+frmrz.imgtampil.Canvas.MoveTo(40+x,150);
+frmrz.imgtampil.Canvas.LineTo(40+x,200);
+frmrz.imgtampil.Canvas.MoveTo(40+x,200);
+frmrz.imgtampil.Canvas.LineTo(70+y,200);
+frmrz.imgtampil.Canvas.MoveTo(70+y,200);
+frmrz.imgtampil.Canvas.lineto(70+y,150);
+frmrz.imgtampil.Canvas.MoveTo(70+y,150);
+frmrz.imgtampil.Canvas.LineTo(100+y,150);
+frmrz.imgtampil.Canvas.Pen.Color:=clBlack;
+end;
+
+procedure dmanchester_1(x,y,i:integer);
+begin
+x:=60*(i-1);
+y:=60*(i-1);
+frmrz.imgtampil.Canvas.Pen.Color:=clRed;
+frmrz.imgtampil.Canvas.MoveTo(40+x,150);
+frmrz.imgtampil.Canvas.LineTo(40+x,100);
+frmrz.imgtampil.Canvas.MoveTo(40+x,100);
+frmrz.imgtampil.Canvas.LineTo(70+y,100);
+frmrz.imgtampil.Canvas.MoveTo(70+y,100);
+frmrz.imgtampil.Canvas.lineto(70+y,150);
+frmrz.imgtampil.Canvas.MoveTo(70+y,150);
+frmrz.imgtampil.Canvas.LineTo(100+y,150);
+frmrz.imgtampil.Canvas.Pen.Color:=clBlack;
+end;
+
+procedure dmanchester_0(x,y,i:integer);
+begin
+x:=60*(i-1);
+y:=60*(i-1);
+frmrz.imgtampil.Canvas.Pen.Color:=clRed;
+frmrz.imgtampil.Canvas.MoveTo(40+x,150);
+frmrz.imgtampil.Canvas.LineTo(40+x,200);
+frmrz.imgtampil.Canvas.MoveTo(40+x,200);
+frmrz.imgtampil.Canvas.LineTo(70+y,200);
+frmrz.imgtampil.Canvas.MoveTo(70+y,200);
+frmrz.imgtampil.Canvas.lineto(70+y,150);
+frmrz.imgtampil.Canvas.MoveTo(70+y,150);
+frmrz.imgtampil.Canvas.LineTo(100+y,150);
+frmrz.imgtampil.Canvas.Pen.Color:=clBlack;
+end;
+
+procedure ami_1(x,y,i:integer);
+begin
+x:=60*(i-1);
+y:=60*(i-1);
+frmrz.imgtampil.Canvas.Pen.Color:=clRed;
+frmrz.imgtampil.Canvas.MoveTo(40+x,150);
+frmrz.imgtampil.Canvas.LineTo(40+x,100);
+frmrz.imgtampil.Canvas.MoveTo(40+x,100);
+frmrz.imgtampil.Canvas.LineTo(70+y,100);
+frmrz.imgtampil.Canvas.MoveTo(70+y,100);
+frmrz.imgtampil.Canvas.lineto(70+y,150);
+frmrz.imgtampil.Canvas.MoveTo(70+y,150);
+frmrz.imgtampil.Canvas.LineTo(100+y,150);
+frmrz.imgtampil.Canvas.Pen.Color:=clBlack;
+end;
+
+procedure ami_0(x,y,i:integer);
+begin
+x:=60*(i-1);
+y:=60*(i-1);
+frmrz.imgtampil.Canvas.Pen.Color:=clRed;
+frmrz.imgtampil.Canvas.MoveTo(40+x,150);
+frmrz.imgtampil.Canvas.LineTo(40+x,200);
+frmrz.imgtampil.Canvas.MoveTo(40+x,200);
+frmrz.imgtampil.Canvas.LineTo(70+y,200);
+frmrz.imgtampil.Canvas.MoveTo(70+y,200);
+frmrz.imgtampil.Canvas.lineto(70+y,150);
+frmrz.imgtampil.Canvas.MoveTo(70+y,150);
+frmrz.imgtampil.Canvas.LineTo(100+y,150);
+frmrz.imgtampil.Canvas.Pen.Color:=clBlack;
+end;
+
+procedure reset;
+var
+  b,c:integer;
+begin
+  frmrz.imgtampil.Picture:=nil;
+  frmrz.imgtampil.Refresh;
+  sumbu(30,150,b,c);
+end;
+
 procedure Tfrmrz.btrzClick(Sender: TObject);
 var sx,x,y,b,c,i:integer;
   data:string;
 begin
+  reset;
   sumbu(30,150,b,c);
     for sx:=1 to 395 do
     begin
@@ -89,4 +269,120 @@ begin
           y:=0;
           end;
       end;
+
+procedure Tfrmrz.btnrzlClick(Sender: TObject);
+var sx,x,y,b,c,i:integer;
+  data:string;
+begin
+  reset;
+  sumbu(30,150,b,c);
+    for sx:=1 to 395 do
+    begin
+      data:='10101010';
+      for i:=1 to 8 do begin
+        if data[i]='1' then begin
+          nrzl_1(x,y,i);
+            end else if data[i]='0' then begin
+              nrzl_0(x,y,i);
+              end;
+            y:=y+60;
+            x:=x+60;
+            end;
+          x:=0;
+          y:=0;
+          end;
+      end;
+
+procedure Tfrmrz.btnrziClick(Sender: TObject);
+var sx,x,y,b,c,i:integer;
+  data:string;
+begin
+  reset;
+  sumbu(30,150,b,c);
+    for sx:=1 to 395 do
+    begin
+      data:='10101010';
+      for i:=1 to 8 do begin
+        if data[i]='1' then begin
+          nrzi_1(x,y,i);
+            end else if data[i]='0' then begin
+              nrzi_0(x,y,i);
+              end;
+            y:=y+60;
+            x:=x+60;
+            end;
+          x:=0;
+          y:=0;
+          end;
+      end;
+
+procedure Tfrmrz.btmanchesterClick(Sender: TObject);
+var sx,x,y,b,c,i:integer;
+  data:string;
+begin
+  reset;
+  sumbu(30,150,b,c);
+    for sx:=1 to 395 do
+    begin
+      data:='10101010';
+      for i:=1 to 8 do begin
+        if data[i]='1' then begin
+          manchester_1(x,y,i);
+            end else if data[i]='0' then begin
+              manchester_0(x,y,i);
+              end;
+            y:=y+60;
+            x:=x+60;
+            end;
+          x:=0;
+          y:=0;
+          end;
+      end;
+
+procedure Tfrmrz.btdmanchesterClick(Sender: TObject);
+var sx,x,y,b,c,i:integer;
+  data:string;
+begin
+  reset;
+  sumbu(30,150,b,c);
+    for sx:=1 to 395 do
+    begin
+      data:='10101010';
+      for i:=1 to 8 do begin
+        if data[i]='1' then begin
+          dmanchester_1(x,y,i);
+            end else if data[i]='0' then begin
+              dmanchester_0(x,y,i);
+              end;
+            y:=y+60;
+            x:=x+60;
+            end;
+          x:=0;
+          y:=0;
+          end;
+      end;
+
+procedure Tfrmrz.btamiClick(Sender: TObject);
+var sx,x,y,b,c,i:integer;
+  data:string;
+begin
+  reset;
+  sumbu(30,150,b,c);
+    for sx:=1 to 395 do
+    begin
+      data:='10101010';
+      for i:=1 to 8 do begin
+        if data[i]='1' then begin
+          ami_1(x,y,i);
+            end else if data[i]='0' then begin
+              ami_0(x,y,i);
+              end;
+            y:=y+60;
+            x:=x+60;
+            end;
+          x:=0;
+          y:=0;
+          end;
+end;
+
 end.
