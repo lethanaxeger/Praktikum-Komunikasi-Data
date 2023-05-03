@@ -1,0 +1,13 @@
+program Praktikum_2;
+
+uses
+  Forms,
+  Praktikum_Sinyal_Digital in 'Praktikum_Sinyal_Digital.pas' {Form1};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.
