@@ -1,0 +1,440 @@
+unit PraktikumUnit3;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ExtCtrls;
+
+type
+  Tfrmrz = class(TForm)
+    Imgtampil: TImage;
+    btrz: TButton;
+    btexit: TButton;
+    btnrz: TButton;
+    btnrzi: TButton;
+    btreset: TButton;
+    btmanc: TButton;
+    Edit1: TEdit;
+    edsumbux: TEdit;
+    edsumbuy: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    btdmanc: TButton;
+    procedure btrzClick(Sender: TObject);
+    procedure btexitClick(Sender: TObject);
+    procedure btnrzClick(Sender: TObject);
+    procedure btnrziClick(Sender: TObject);
+    procedure btmancClick(Sender: TObject);
+    procedure btdmancClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmrz: Tfrmrz;
+  x0,y0,p,l,lbr,tggi,bnykbit:integer;
+
+implementation
+
+{$R *.dfm}
+
+procedure sumbu (ax,ay,b,c:integer);
+Begin
+  frmrz.imgtampil.Canvas.MoveTo(ax,ay);
+  frmrz.imgtampil.Canvas.LineTo(ax+b,ay);
+  frmrz.imgtampil.Canvas.MoveTo(ax,ay);
+  frmrz.imgtampil.Canvas.LineTo(ax,ay-c);
+  frmrz.imgtampil.Canvas.MoveTo(ax,ay);
+  frmrz.imgtampil.Canvas.LineTo(ax,ay+c);
+end;
+
+procedure reset;
+begin
+  frmrz.imgtampil.Picture:=nil;
+  frmrz.imgtampil.Refresh;
+end;
+
+//RZ
+procedure rz_1(x,y:integer);
+begin
+    frmrz.imgtampil.Canvas.Pen.Color:=clRed;
+    frmrz.imgtampil.Canvas.MoveTo(40+x,150);
+    frmrz.imgtampil.Canvas.LineTo(40+x,100);
+    frmrz.imgtampil.Canvas.MoveTo(40+x,100);
+    frmrz.imgtampil.Canvas.LineTo(70+y,100);
+    frmrz.imgtampil.Canvas.MoveTo(70+y,100);
+    frmrz.imgtampil.Canvas.LineTo(70+y,150);
+    frmrz.imgtampil.Canvas.MoveTo(70+y,150);
+    frmrz.imgtampil.Canvas.LineTo(100+y,150);
+    frmrz.imgtampil.Canvas.Pen.Color:=clBlack;
+end;
+
+procedure rz_0(x,y:integer);
+begin
+    frmrz.imgtampil.Canvas.Pen.Color:=clRed;
+    frmrz.imgtampil.Canvas.MoveTo(40+x,150);
+    frmrz.imgtampil.Canvas.LineTo(40+x,200);
+    frmrz.imgtampil.Canvas.MoveTo(40+x,200);
+    frmrz.imgtampil.Canvas.LineTo(70+y,200);
+    frmrz.imgtampil.Canvas.MoveTo(70+y,200);
+    frmrz.imgtampil.Canvas.LineTo(70+y,150);
+    frmrz.imgtampil.Canvas.MoveTo(70+y,150);
+    frmrz.imgtampil.Canvas.LineTo(100+y,150);
+    frmrz.imgtampil.Canvas.Pen.Color:=clBlack;
+end;
+
+procedure Tfrmrz.btrzClick(Sender: TObject);
+var i:integer;
+    data:string;
+    sx,sy,x,y:integer;
+begin
+reset;
+data:=edit1.text;
+x:=0;
+y:=0;
+for i:=1 to length(data) do begin
+    if data[i]='1' then begin
+      rz_1(x,y);
+      end else if data[i]='0' then begin
+          rz_0(x,y);
+      end;
+      y:=y+60;
+      x:=x+60;
+    end;
+    x:=0;
+    y:=0;
+x:= strtoint(frmrz.edsumbux.Text);
+y:= strtoint(frmrz.edsumbuy.Text);
+    sumbu(40,150,500,y);
+          for sx:=1 to 450 do
+begin
+          sy:=y;
+ end;
+end;
+
+//NRZ-L
+procedure garis0(x,y:integer);
+begin
+  frmrz.imgtampil.Canvas.Pen.Color:=clRed;
+  frmrz.imgtampil.Canvas.MoveTo(40+x,100);
+  frmrz.imgtampil.Canvas.LineTo(100+y,100);
+  frmrz.imgtampil.Canvas.Pen.Color:=clBlack;
+end;
+
+procedure garis1(x,y:integer);
+begin
+  frmrz.imgtampil.Canvas.Pen.Color:=clRed;
+  frmrz.imgtampil.Canvas.MoveTo(40+y,200);
+  frmrz.imgtampil.Canvas.LineTo(100+y,200);
+  frmrz.imgtampil.Canvas.Pen.Color:=clBlack;
+end;
+
+procedure garistegak (x,y:integer);
+begin
+  frmrz.imgtampil.Canvas.Pen.Color:=clRed;
+  frmrz.imgtampil.Canvas.MoveTo(40+x,100);
+  frmrz.imgtampil.Canvas.LineTo(40+x,200);
+  frmrz.imgtampil.Canvas.Pen.Color:=clBlack;
+end;
+
+procedure Tfrmrz.btnrzClick(Sender: TObject);
+var i:integer;
+    data:string;
+    sx,sy,x,y:integer;
+begin
+reset;
+data:=frmrz.Edit1.Text;
+x:=0;
+y:=0;
+for i:=1 to length(frmrz.Edit1.Text) do
+    begin
+      if data[i]='1' then
+      begin
+         garis1(x,y);
+      end;
+
+      if data[i]='0' then
+      begin
+          garis0(x,y);
+      end;
+
+      if data[i]<>data[i-1] then
+      begin
+          garistegak(x,y);
+      end;
+
+      y:=y+60;
+      x:=x+60;
+    end;
+    x:=0;
+    y:=0;
+x:= strtoint(frmrz.edsumbux.Text);
+y:= strtoint(frmrz.edsumbuy.Text);
+sumbu(40,150,500,y);
+          for sx:=1 to 500 do
+begin
+          sy:=y;
+ end;
+ end;
+
+//NRZ-I
+procedure grsbwh(poss:integer);
+begin
+   with frmrz.imgtampil.Canvas do
+      begin
+           frmrz.imgtampil.Canvas.Pen.Color:=clRed;
+           MoveTo(x0+poss,y0+tggi);
+           lineto(x0+poss+lbr,y0+tggi);
+           frmrz.imgtampil.Canvas.Pen.Color:=clBlack;
+      end;
+end;
+procedure grsats(pos:integer);
+begin
+    with frmrz.imgtampil.Canvas do
+      begin
+           frmrz.imgtampil.Canvas.Pen.Color:=clRed;
+           MoveTo(x0+pos,y0-tggi);
+           LineTo(x0+pos+lbr,y0-tggi);
+           frmrz.imgtampil.Canvas.Pen.Color:=clBlack;
+      end;
+end;
+
+procedure grs(pos:integer);
+begin
+   with frmrz.imgtampil.Canvas do
+      begin
+           frmrz.imgtampil.Canvas.Pen.Color:=clRed;
+           MoveTo(x0+pos,y0+tggi);
+           LineTo(x0+pos,y0-tggi);
+           frmrz.imgtampil.Canvas.Pen.Color:=clBlack;
+      end;
+end;
+
+procedure sumbui(ax,ay,b,c:integer);
+begin
+  with frmrz.imgtampil.Canvas do
+    begin
+      MoveTo(ax,ay);
+      LineTo(ax+b,ay);
+      MoveTo(ax,ay);
+      LineTo(ax,ay-c);
+      MoveTo(ax,ay);
+      LineTo(ax,ay+c);
+    end;
+end;
+
+procedure nrzi(biner:string);
+var
+  i,count:integer;
+  pos:integer;
+  sbl:boolean;
+ begin
+  count:=0;
+  sbl:=false;
+  bnykbit:=length(biner);
+  lbr:=round(p/(bnykbit));
+
+  for i:=1 to bnykbit do
+      begin
+          pos:=round(p/(bnykbit))*count;
+
+            if biner[i]= '1' then
+                sbl:=not sbl;
+            if sbl=true then
+                grsbwh(pos)
+            else
+                grsats(pos);
+            if  biner[i]='1' then
+                grs(pos);
+
+            count:=count+1;
+      end;
+ end;
+
+
+procedure Tfrmrz.btnrziClick(Sender: TObject);
+begin
+      reset;
+      frmrz.imgtampil.Canvas.Create;
+      y0:= round(frmrz.imgtampil.Height/2);
+      x0:= round((imgtampil.Width-100)/20 );
+      p:= imgtampil.Width-300;
+      l:= round((imgtampil.Height/2)-100);
+      tggi:=l-100;
+      sumbu(x0,y0,400,l);
+      nrzi(Edit1.Text);
+end;
+
+//Manchester
+procedure sumbumanc (ax,ay,b,c:integer);
+Begin
+  frmrz.imgtampil.Canvas.MoveTo(ax,ay);
+  frmrz.imgtampil.Canvas.LineTo(ax+b,ay);
+  frmrz.imgtampil.Canvas.MoveTo(ax,ay);
+  frmrz.imgtampil.Canvas.LineTo(ax,ay-c);
+  frmrz.imgtampil.Canvas.MoveTo(ax,ay);
+  frmrz.imgtampil.Canvas.LineTo(ax,ay+c);
+end;
+
+procedure garismanc0(x,y:integer);
+begin
+  frmrz.imgtampil.Canvas.Pen.Color:=clred;
+  frmrz.imgtampil.Canvas.MoveTo(40+x,100);
+  frmrz.imgtampil.Canvas.LineTo(70+y,100);
+  frmrz.imgtampil.Canvas.LineTo(70+y,200);
+  frmrz.imgtampil.Canvas.MoveTo(70+y,200);
+  frmrz.imgtampil.Canvas.LineTo(100+x,200);
+  frmrz.imgtampil.Canvas.Pen.Color:=clBlack;
+
+end;
+
+procedure garismanc1 (x,y:integer);
+begin
+  frmrz.imgtampil.Canvas.Pen.Color:=clred;
+  frmrz.imgtampil.Canvas.MoveTo(40+x,200);
+  frmrz.imgtampil.Canvas.LineTo(70+y,200);
+  frmrz.imgtampil.Canvas.MoveTo(70+y,200);
+  frmrz.imgtampil.Canvas.LineTo(70+y,100);
+  frmrz.imgtampil.Canvas.MoveTo(70+y,100);
+  frmrz.imgtampil.Canvas.LineTo(100+y,100);
+  frmrz.imgtampil.Canvas.Pen.Color:=clBlack;
+end;
+
+procedure garistegakmanc (x,y:integer);
+begin
+  frmrz.imgtampil.Canvas.Pen.Color:=clred;
+  frmrz.imgtampil.Canvas.MoveTo(40+x,100);
+  frmrz.imgtampil.Canvas.LineTo(40+x,200);
+  frmrz.imgtampil.Canvas.Pen.Color:=clBlack;
+end;
+
+procedure garistegakmanc1 (x,y:integer);
+begin
+  frmrz.imgtampil.Canvas.Pen.Color:=clred;
+  frmrz.imgtampil.Canvas.MoveTo(40+x,100);
+  frmrz.imgtampil.Canvas.LineTo(40+x,150);
+  frmrz.imgtampil.Canvas.Pen.Color:=clBlack;
+end;
+
+procedure Tfrmrz.btmancClick(Sender: TObject);
+var i:integer;
+    data:string;
+    sx,sy,x,y:integer;
+begin
+reset;
+data:=frmrz.Edit1.Text;
+x:=0;
+y:=0;
+for i:=1 to length(frmrz.Edit1.Text) do
+    begin
+      if data[i]='1' then
+      begin
+         garismanc1(x,y);
+      end;
+
+      if data[i]='0' then
+      begin
+          garismanc0(x,y);
+      end;
+
+      if data[i]=data[i-1] then
+      begin
+          garistegakmanc(x,y);
+      end;
+
+      y:=y+60;
+      x:=x+60;
+    end;
+    x:=0;
+    y:=0;
+x:= strtoint(frmrz.edsumbux.Text);
+y:= strtoint(frmrz.edsumbuy.Text);
+sumbu(40,150,500,y);
+          for sx:=1 to 500 do
+begin
+          sy:=y;
+end;
+end;
+
+//D-Manchester
+procedure dmncstr_1(ax,ay,a,b,i:integer);
+begin
+  frmrz.imgtampil.Canvas.Pen.Color:=clred;
+  frmrz.imgtampil.Canvas.MoveTo(ax+(i-1)*b+((i-1)*b),200);
+  frmrz.imgtampil.Canvas.LineTo((ax+(i-1)*b+((i-1)*b))+b,200);
+  frmrz.imgtampil.Canvas.LineTo((ax+(i-1)*b+((i-1)*b))+b,100);
+  frmrz.imgtampil.Canvas.LineTo((ax+(i-1)*b+((i-1)*b))+2*b,100);
+  frmrz.imgtampil.Canvas.Pen.Color:=clBlack;
+end;
+
+procedure dmncstr_0(ax,ay,a,b,i:integer);
+begin
+  frmrz.imgtampil.Canvas.Pen.Color:=clred;
+  frmrz.imgtampil.Canvas.MoveTo(ax+(i-1)*b+((i-1)*b),100);
+  frmrz.imgtampil.Canvas.LineTo((ax+(i-1)*b+((i-1)*b))+b,100);
+  frmrz.imgtampil.Canvas.LineTo((ax+(i-1)*b+((i-1)*b))+b,200);
+  frmrz.imgtampil.Canvas.LineTo((ax+(i-1)*b+((i-1)*b))+2*b,200);
+  frmrz.imgtampil.Canvas.Pen.Color:=clBlack;
+end;
+
+procedure dtegak(ax,ay,a,b,i:integer);
+begin
+  frmrz.imgtampil.Canvas.Pen.Color:=clred;
+  frmrz.imgtampil.Canvas.MoveTo((ax+(i-1)*b+((i-1)*b)),100);
+  frmrz.imgtampil.Canvas.LineTo((ax+(i-1)*b+((i-1)*b)),200);
+  frmrz.imgtampil.Canvas.Pen.Color:=clBlack;
+end;
+
+procedure Tfrmrz.btdmancClick(Sender: TObject);
+var
+  i:integer;
+  sx,sy,x,y:integer;
+  tnd,ax,ay,a,b,n:integer;
+  edbiner:string;
+begin
+  reset;
+  edbiner:=frmrz.Edit1.Text;
+  ax:=40;
+  ay:=150;
+  a:=30;
+  b:=30;
+  tnd:=1;
+  x:=0;
+  y:=0;
+  x:= strtoint(frmrz.edsumbux.Text);
+  y:= strtoint(frmrz.edsumbuy.Text);
+  sumbu(40,150,600,y);
+  for sx:=1 to 500 do
+    begin
+      sy:=y;
+    end;
+  for n:=1 to length(edbiner) do
+    begin
+      if edbiner[n]='1' then
+        if tnd = 0 then
+          begin dmncstr_1(ax,ay,b,a,n);
+            tnd:= 1;
+ 		      end
+        else
+          begin dmncstr_0(ax,ay,b,a,n);
+            tnd:=0;
+          end
+      else
+        if tnd = 0 then
+          begin dtegak(ax,ay,b,a,n);
+            dmncstr_0(ax,ay,b,a,n);
+          end
+        else
+          begin dtegak(ax,ay,b,a,n);
+                dmncstr_1(ax,ay,b,a,n);
+          end
+    end;
+end;
+ procedure Tfrmrz.btexitClick(Sender: TObject);
+begin
+close
+end;
+end.
