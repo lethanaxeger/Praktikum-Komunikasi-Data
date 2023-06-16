@@ -1,9 +1,9 @@
-object Form1: TForm1
-  Left = 192
-  Top = 117
+object Frmpctopc: TFrmpctopc
+  Left = 482
+  Top = 118
   Width = 1044
   Height = 540
-  Caption = 'Form1'
+  Caption = 'Komunikasi PC to PC'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,6 +11,99 @@ object Form1: TForm1
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
+  object Label1: TLabel
+    Left = 8
+    Top = 56
+    Width = 22
+    Height = 13
+    Caption = 'Kirim'
+  end
+  object Label2: TLabel
+    Left = 408
+    Top = 56
+    Width = 32
+    Height = 13
+    Caption = 'Terima'
+  end
+  object Mengirim: TMemo
+    Left = 8
+    Top = 72
+    Width = 393
+    Height = 345
+    Lines.Strings = (
+      'Memo1')
+    TabOrder = 0
+  end
+  object Menerima: TMemo
+    Left = 408
+    Top = 72
+    Width = 385
+    Height = 345
+    Lines.Strings = (
+      'Memo2')
+    TabOrder = 1
+  end
+  object GroupBox1: TGroupBox
+    Left = 8
+    Top = 424
+    Width = 793
+    Height = 49
+    TabOrder = 2
+    object Btsend: TButton
+      Left = 8
+      Top = 16
+      Width = 75
+      Height = 25
+      Caption = '&Send'
+      TabOrder = 0
+      OnClick = BtsendClick
+    end
+    object Btsetup: TButton
+      Left = 104
+      Top = 16
+      Width = 75
+      Height = 25
+      Caption = '&Setup'
+      TabOrder = 1
+      OnClick = BtsetupClick
+    end
+    object Btexit: TButton
+      Left = 200
+      Top = 16
+      Width = 75
+      Height = 25
+      Caption = '&Exit'
+      TabOrder = 2
+      OnClick = BtexitClick
+    end
+    object Edinputteks: TEdit
+      Left = 320
+      Top = 16
+      Width = 121
+      Height = 21
+      TabOrder = 3
+    end
+  end
+  object Comserial: TComPort
+    BaudRate = br9600
+    Port = 'COM3'
+    Parity.Bits = prNone
+    StopBits = sbOne5StopBits
+    DataBits = dbEight
+    Events = [evRxChar, evTxEmpty, evRxFlag, evRing, evBreak, evCTS, evDSR, evError, evRLSD, evRx80Full]
+    FlowControl.OutCTSFlow = False
+    FlowControl.OutDSRFlow = False
+    FlowControl.ControlDTR = dtrDisable
+    FlowControl.ControlRTS = rtsDisable
+    FlowControl.XonXoffOut = False
+    FlowControl.XonXoffIn = False
+    StoredProps = [spBasic]
+    TriggersOnRxChar = True
+    OnRxChar = ComserialRxChar
+    Left = 792
+    Top = 72
+  end
 end
