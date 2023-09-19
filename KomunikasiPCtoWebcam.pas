@@ -26,6 +26,7 @@ type
     procedure Timer1Timer(Sender: TObject);
     procedure BtcaptureClick(Sender: TObject);
     procedure CbperangkatClick(Sender: TObject);
+    procedure BtexitClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -69,7 +70,7 @@ waktu:string;
 begin
 TimeSeparator := '_';
 waktu := TimeToStr(time);
-//ImgSave.Picture.SaveToFile();
+ImgSave.Picture.SaveToFile('C:\Users\Neovni_LP\Documents\GitHub\Praktikum-Komunikasi-Data\Cao\'+waktu+'.bmp');
 timer1.Enabled:=False;
 end;
 
@@ -78,6 +79,11 @@ begin
 samplegrabber1.GetBitmap(Imgtampil.Picture.Bitmap);
 imgsave.Picture := imgtampil.Picture;
 timer1.Enabled := true;
+end;
+
+procedure TFrmcapture.BtexitClick(Sender: TObject);
+begin
+  close;
 end;
 
 end.

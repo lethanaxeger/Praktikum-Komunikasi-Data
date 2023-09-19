@@ -1,8 +1,8 @@
 object Frmcapture: TFrmcapture
-  Left = 457
-  Top = 170
+  Left = 324
+  Top = 205
   Width = 1043
-  Height = 552
+  Height = 409
   Caption = 'Capture Gambar'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -18,12 +18,14 @@ object Frmcapture: TFrmcapture
     Top = 0
     Width = 305
     Height = 281
+    Proportional = True
   end
   object ImgSave: TImage
     Left = 616
     Top = 0
     Width = 313
     Height = 281
+    Proportional = True
   end
   object Panel1: TPanel
     Left = 0
@@ -38,6 +40,7 @@ object Frmcapture: TFrmcapture
       Height = 25
       Caption = 'Exit'
       TabOrder = 0
+      OnClick = BtexitClick
     end
     object Btcapture: TButton
       Left = 88
@@ -73,10 +76,12 @@ object Frmcapture: TFrmcapture
     Top = 0
     Width = 313
     Height = 281
+    FilterGraph = FilterGraph1
     VMROptions.Mode = vmrWindowed
     Color = clBlack
   end
   object SampleGrabber1: TSampleGrabber
+    FilterGraph = FilterGraph1
     MediaType.data = {
       7669647300001000800000AA00389B717DEB36E44F52CE119F530020AF0BA770
       FFFFFFFF0000000001000000809F580556C3CE11BF0100AA0055595A00000000
@@ -87,6 +92,7 @@ object Frmcapture: TFrmcapture
   object Filter1: TFilter
     Tag = 1
     BaseFilter.data = {00000000}
+    FilterGraph = FilterGraph1
     Left = 304
     Top = 288
   end
@@ -96,6 +102,7 @@ object Frmcapture: TFrmcapture
     Top = 288
   end
   object FilterGraph1: TFilterGraph
+    Mode = gmCapture
     GraphEdit = False
     Left = 264
     Top = 288
